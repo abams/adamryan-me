@@ -1,8 +1,8 @@
 $avatarSize: 200px;
 $textColorDark: #222;
 $textColorLight: lighten($textColorDark, 60%);
-$heroGradiantLight: #C6B3FC;
-$heroGradiantDark: #40ACFF;
+$heroGradiantLight: #21B5FF;
+$heroGradiantDark: #568EEF;
 
 html {
   font-weight: 100;
@@ -28,6 +28,13 @@ body {
 
   width: $width;
   margin: 4em auto;
+  box-sizing: border-box;
+
+  @media screen and (max-width: $width + $padding * 2) {
+      width: 100%;
+      padding: 0 $padding;
+      margin: 3em 0;
+  }
 }
 
 #hero {
@@ -36,22 +43,22 @@ body {
   line-height: 0.5;
 
   /* IE10 Consumer Preview */
-  background-image: -ms-linear-gradient(top left, $heroGradiantLight 0%, $heroGradiantDark 100%);
+  background-image: -ms-linear-gradient(top, $heroGradiantLight 0%, $heroGradiantDark 100%);
 
   /* Mozilla Firefox */
-  background-image: -moz-linear-gradient(top left, $heroGradiantLight 0%, $heroGradiantDark 100%);
+  background-image: -moz-linear-gradient(top, $heroGradiantLight 0%, $heroGradiantDark 100%);
 
   /* Opera */
-  background-image: -o-linear-gradient(top left, $heroGradiantLight 0%, $heroGradiantDark 100%);
+  background-image: -o-linear-gradient(top, $heroGradiantLight 0%, $heroGradiantDark 100%);
 
   /* Webkit (Safari/Chrome 10) */
-  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, $heroGradiantLight), color-stop(1, $heroGradiantDark));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, $heroGradiantLight), color$heroGradiantDark(1, #568EEF));
 
   /* Webkit (Chrome 11+) */
-  background-image: -webkit-linear-gradient(top left, $heroGradiantLight 0%, $heroGradiantDark 100%);
+  background-image: -webkit-linear-gradient(top, $heroGradiantLight 0%, $heroGradiantDark 100%);
 
   /* W3C Markup, IE10 Release Preview */
-  background-image: linear-gradient(to bottom right, $heroGradiantLight 0%, $heroGradiantDark 100%);
+  background-image: linear-gradient(to bottom, $heroGradiantLight 0%, $heroGradiantDark 100%);
 
   .container {
     text-align: center;
@@ -67,10 +74,18 @@ body {
 #projects {
   table {
     margin: 0 auto;
+    float: left;
   }
 
   td {
     padding: 0 1em 0 1em;
+
+    @media screen and (max-width: 540px) {
+      width: 33%;
+    }
+    @media screen and (max-width: 440px) {
+      width: 50%;
+    }
   }
 
   .icon {
