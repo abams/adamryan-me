@@ -1,8 +1,9 @@
 $avatarSize: 200px;
 $textColorDark: #222;
 $textColorLight: lighten($textColorDark, 60%);
-$heroGradiantLight: #21B5FF;
-$heroGradiantDark: #568EEF;
+$heroGradiantLight: #99DDFF;
+$heroGradiantDark: #5BAFEF;
+$linkColor: $heroGradiantDark;
 
 html {
   font-weight: 100;
@@ -71,7 +72,15 @@ body {
   }
 }
 
+#work {
+  a {
+    color: $linkColor;
+    text-decoration: none;
+  }
+}
+
 #projects {
+
   table {
     margin: 0 auto;
     float: left;
@@ -99,6 +108,7 @@ body {
 }
 
 #copyright {
+  padding-top: 10em;
   text-align: center;
   color: $textColorLight;
   font-size: 0.8em;
